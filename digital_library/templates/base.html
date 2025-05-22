@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Cyfrowa Biblioteka{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1><a href="{% url 'book_list' %}" class="text-decoration-none text-dark">📚 Cyfrowa Biblioteka</a></h1>
+        <hr>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
+

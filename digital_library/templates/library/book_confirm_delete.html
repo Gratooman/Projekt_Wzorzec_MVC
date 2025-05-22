@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Usuń książkę{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Czy na pewno chcesz usunąć tę książkę?</h2>
+
+<div class="alert alert-warning">
+    <strong>{{ book.title }}</strong> - {{ book.author }} ({{ book.year }})<br>
+    <span>Kategoria: {{ book.category }} | Status: {{ book.get_status_display }}</span>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Usuń</button>
+    <a href="{% url 'book_list' %}" class="btn btn-secondary">Anuluj</a>
+</form>
+{% endblock %}

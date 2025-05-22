@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}{{ new|yesno:"Dodaj książkę,Edycja książki" }}{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">{{ new|yesno:"Dodaj książkę,Edycja książki" }}</h2>
+
+<form method="post" novalidate>
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="mb-3">
+            <label class="form-label">{{ field.label_tag }}</label>
+            {{ field }}
+            {% if field.help_text %}
+                <div class="form-text">{{ field.help_text }}</div>
+            {% endif %}
+            {% for error in field.errors %}
+                <div class="text-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-success">Zapisz</button>
+    <a href="{% url 'book_list' %}" class="btn btn-secondary">Anuluj</a>
+</form>
+{% endblock %}
+`
