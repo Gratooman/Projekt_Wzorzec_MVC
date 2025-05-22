@@ -34,8 +34,8 @@ Aplikacja wykonana w ramach projektu zaliczeniowego na studiach. Zbudowana w opa
 
 1.Klonowanie repozytorium:
 
-git clone https://github.com/twoj-login/cyfrowa-biblioteka.git
-cd cyfrowa-biblioteka
+git clone https://github.com/Gratooman/Projekt_Wzorzec_MVC.git
+cd digital_library
 
 
 2.Utworzenie środowiska wirtualnego:
